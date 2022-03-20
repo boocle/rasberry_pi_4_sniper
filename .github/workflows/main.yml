@@ -1,0 +1,33 @@
+name: main
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  elektor:
+    uses: boocle/rasberry_pi_4_sniper/.github/workflows/build-and-run-cypress-test.yml@main
+    with:
+      jobname: elektor
+  kubbi:
+    uses: boocle/rasberry_pi_4_sniper/.github/workflows/build-and-run-cypress-test.yml@main
+    with:
+      jobname: kubbi
+  mchobby:
+    uses: boocle/rasberry_pi_4_sniper/.github/workflows/build-and-run-cypress-test.yml@main
+    with:
+      jobname: mchobby
+  okdo:
+    uses: boocle/rasberry_pi_4_sniper/.github/workflows/build-and-run-cypress-test.yml@main
+    with:
+      jobname: okdo
+  reichelt:
+    uses: boocle/rasberry_pi_4_sniper/.github/workflows/build-and-run-cypress-test.yml@main
+    with:
+      jobname: reichelt
+  yadom:
+    uses: boocle/rasberry_pi_4_sniper/.github/workflows/build-and-run-cypress-test.yml@main
+    with:
+      jobname: yadom

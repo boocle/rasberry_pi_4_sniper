@@ -1,0 +1,14 @@
+on:
+  workflow_call:
+    inputs:
+      jobname:
+        required: true
+        type: string
+
+jobs:
+  build_and_run_workflow_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1
+      - run: ./node_modules/cypress/bin/cypress run --spec cypress/integration/${{ inputs.jobname }}_spec.js --browser chrome
